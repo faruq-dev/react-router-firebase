@@ -17,3 +17,5 @@ const Layout = () => {
 };
 
 export default Layout;
+
+// Layout is used in the app component

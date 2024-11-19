@@ -6,37 +6,54 @@ import Contact from "../pages/Contact";
 import NotFound from "../pages/NotFound";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
+import Users from "../pages/Users";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
     {
-        path: '/',
-        element: <App/>,
-        children: [{
-            path: '/',
-            element: <Home/>
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
         },
         {
-            path: 'about',
-            element: <About/>
+          path: "about",
+          element: <About />,
         },
         {
-            path: 'contact',
-            element: <Contact/>
+          path: "contact",
+          element: <Contact />,
         },
         {
-            path: 'signup',
-            element: <Signup/>
+          path: "signup",
+          element: <Signup />,
         },
         {
-            path: 'login',
-            element: <Login/>
-        }
-    ],
+          path: "login",
+          element: <Login />,
+        },
+        {
+          path: "users",
+          element: <Users />,
+          loader: () => fetch("https://jsonplaceholder.typicode.com/users/"),
+        },
+      ],
     },
     {
-        path: '*',
-        element: <NotFound/>
-    }
-]);
+      path: "*",
+      element: <NotFound />,
+    },
+  ],
+  {
+    future: {
+      v7_fetcherPersist: true,
+      v7_normalizeFormMethod: true,
+      v7_partialHydration: true,
+      v7_skipActionErrorRevalidation: true
+    },
+  }
+);
 
 export default router;
