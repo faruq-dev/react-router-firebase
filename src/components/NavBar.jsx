@@ -1,5 +1,5 @@
 // import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   // const navigate = useNavigate();
@@ -11,49 +11,50 @@ const Navbar = () => {
           Router
         </div>
 
-        {/* Navigation Links */}
+        {/* Navigation NavLinks */}
         <ul className="hidden md:flex space-x-8">
           <li>
-            <Link to={'/'}
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            {/* এখানে NavLink এর বদলে Link ইউজ করা হয় সাধারনত, তবে যদি Active লিংক কে স্টাইল করতে হয়য় তাহলে NavLink ইউজ করতে হবে, Link ও NavLinkদুটাই react router dom থেকে আসে */}
+            <NavLink to={'/'}
+              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Home
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={'about'}
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            <NavLink to={'about'}
+              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               About Us
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={'users'}
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            <NavLink to={'users'}
+              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Users
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={'contact'}
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            <NavLink to={'contact'}
+              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Contact Us
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={'login'}
-              className="hover:text-blue-600 dark:hover:text-blue-400 transition"
+            <NavLink to={'login'}
+              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Login
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to={'signup'}
+            <NavLink to={'signup'}
               className="bg-blue-600 hover:bg-blue-500 py-3 px-6 text-white rounded-md font-medium "
             >
               Sign Up
-            </Link>
+            </NavLink>
           </li>
         </ul>
 
