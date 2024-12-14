@@ -16,35 +16,35 @@ const Navbar = () => {
           <li>
             {/* এখানে NavLink এর বদলে Link ইউজ করা হয় সাধারনত, তবে যদি Active লিংক কে স্টাইল করতে হয়য় তাহলে NavLink ইউজ করতে হবে, Link ও NavLinkদুটাই react router dom থেকে আসে */}
             <NavLink to={'/'}
-              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
+              className={( {isActive, isPending}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Home
             </NavLink>
           </li>
           <li>
             <NavLink to={'about'}
-              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
+              className={( {isActive, isPending}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               About Us
             </NavLink>
           </li>
           <li>
             <NavLink to={'users'}
-              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
+              className={( {isActive, isPending}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Users
             </NavLink>
           </li>
           <li>
             <NavLink to={'contact'}
-              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
+              className={( {isActive, isPending}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Contact Us
             </NavLink>
           </li>
           <li>
             <NavLink to={'login'}
-              className={( {isActive}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
+              className={( {isActive, isPending}) => isActive ? "text-orange-400 font-bold hover:text-orange-500" : "hover:text-blue-600 dark:hover:text-blue-400 transition" }
             >
               Login
             </NavLink>
